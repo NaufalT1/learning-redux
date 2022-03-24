@@ -8,21 +8,26 @@ const slice = createSlice({
     initialState: initialState,
     reducers: {
         addProduct: (state, action) => {
-            const { name, price, quantity, hasDiscount } = action.payload;
+            // const { name, price, quantity, hasDiscount } = action.payload;
             state.push({
                 id: ++lastId,
-                name,
-                price,
-                quantity,
-                hasDiscount,
+                name: action.payload.name,
+                price: action.payload.price ? action.payload.price : 0,
+                quantity: action.payload.quantity ? action.payload.quantity : 0,
+                hasDiscount: action.payload.hasDiscount ? action.payload.hasDiscount : false,
             })
         },
         markAsDiscount: (state, action) => {
-            const { id } = action.payload;
+            const  id  = action.payload;
             const product = state.find(product => product.id === id);
             product.hasDiscount = true;
+        },
+        removeProduct: (state, action) => {
+            const  id  = action.payload;
+            const product = state.find(product => product.id === id);
+            state.splice(state.indexOf(product), 1);
         }
     }
 })
 export default slice.reducer;
-export const { addProduct, markAsDiscount } = slice.actions;
+export const { addProduct, markAsDiscount, removeProduct } = slice.actions;
