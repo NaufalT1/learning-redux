@@ -1,5 +1,5 @@
 import store from "./store/store";
-import * as action from "./store/product/actionType";
+// import * as action from "./store/product/actionTypes";
 import { addProduct, markAsDiscount, removeProduct } from "./store/product/actions";
 
 

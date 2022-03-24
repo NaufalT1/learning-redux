@@ -1,4 +1,4 @@
-import * as actions from './actionType';
+import * as actions from './actionTypes';
 
 //make function to add product
 export const addProduct = (product = {}) => {
