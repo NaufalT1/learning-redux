@@ -10,7 +10,7 @@ const api = store => next => async action => {
 
     const { url, method, data, onSuccess, onError } = action.payload;
     const response = await axios.request({
-        baseURL: 'http://localhost:9001/api',
+        // baseURL: 'http://localhost:9001/api',
         url,
         method,
         data
