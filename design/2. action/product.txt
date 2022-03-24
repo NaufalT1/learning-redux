@@ -1,0 +1,21 @@
+{
+    type: berisikan string
+    payload:{
+
+    }
+}
+
+{
+    type: productAdded
+    payload:{
+
+    }
+}
+
+{
+    type: productDeleted
+    payload:{
+
+    }
+}
+

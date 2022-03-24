@@ -1,0 +1,9 @@
+{
+    type: "productAddedToCart",
+    payload:{
+        id:
+        quantity:
+    }
+}
+
+#TODO : Buat min 2 action untuk setiap design
