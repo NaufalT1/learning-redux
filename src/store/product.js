@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let lastId = 0;
-const initialState = []
+const initialState = {
+    list:[]
+}
 
 const slice = createSlice({
     name: "product",
     initialState: initialState,
     reducers: {
         addProduct: (state, action) => {
-            // const { name, price, quantity, hasDiscount } = action.payload;
             state.push({
                 id: ++lastId,
                 name: action.payload.name,

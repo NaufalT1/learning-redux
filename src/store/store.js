@@ -3,6 +3,8 @@ import { configureStore } from "@reduxjs/toolkit";
 // import { devToolsEnhancer } from "redux-devtools-extension";
 // import reducer from "./product/reducer";
 import reducer from "./rootReducer";
+import logger from "./middleware/logger";
+import api from "./middleware/api";
 
 //create store
 // const store = createStore(
@@ -12,7 +14,9 @@ import reducer from "./rootReducer";
 //     );
 
 const store = configureStore({
-    reducer
+    reducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger, api)
 });
+
 
 export default store;
